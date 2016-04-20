@@ -1,3 +1,5 @@
+" my vim settings
+" author yuya aoki
 syntax on
 set number
 colorscheme darkblue
