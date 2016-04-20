@@ -1,8 +1,19 @@
 " my vim settings
 " author yuya aoki
+
 syntax on
 set number
+set noswapfile
+set cmdheight=2
+set title
+set wildmenu
+set smartcase
+set hlsearch
+set background=dark
+set incsearch
+set whichwrap=b,s,h,l,<,>,[,]
 colorscheme darkblue
+
 autocmd BufNewFile *.py 0r $HOME/.vim/template/template.py
 augroup cpp-path
    autocmd!
