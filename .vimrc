@@ -1,7 +1,11 @@
 syntax on
+set number
 colorscheme darkblue
 autocmd BufNewFile *.py 0r $HOME/.vim/template/template.py
-
+augroup cpp-path
+   autocmd!
+   autocmd FileType cpp setlocal path=.,/usr/incbude./usr/local/include,/usr/lib/c++/v1
+augroup END
 if 0 | endif
 
 nmap <F5> :!python %
@@ -27,14 +31,18 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
 
-
+NeoBundle 'vim-jp/cpp-vim',{'autoload' : {'filetypes' : 'cpp'}}
+"NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'jmcantrell/vim-virtualenv'
 "NeoBundle 'Flake8-vim'
 NeoBundle 'hynek/vim-python-pep8-indent'
 NeoBundle 'drillbits/nyan-modoki.vim'
 NeoBundle 'scrooloose/syntastic'
-
-
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'Shougo/vimshell'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'supermomonga/vimshell-kawaii.vim'
 call neobundle#end()
 
 " Required:
@@ -132,3 +140,9 @@ endfunction
 
 " Shift + F でautopep自動修正
 nnoremap <S-f> :call Autopep8()<CR>
+
+if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.cpp =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
