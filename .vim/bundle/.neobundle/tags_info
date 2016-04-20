@@ -1,0 +1,5 @@
+neobundle.vim
+nyan-modoki.vim
+syntastic
+vim-python-pep8-indent
+vim-virtualenv
