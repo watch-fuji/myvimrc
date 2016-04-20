@@ -1,5 +1,12 @@
 neobundle.vim
+neosnippet
+neosnippet-snippets
 nyan-modoki.vim
 syntastic
+unite.vim
+vim-clang
 vim-python-pep8-indent
 vim-virtualenv
+vimproc
+vimshell
+vimshell-kawaii.vim

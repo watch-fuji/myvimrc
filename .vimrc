@@ -31,7 +31,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
 
-NeoBundle 'vim-jp/cpp-vim',{'autoload' : {'filetypes' : 'cpp'}}
+NeoBundle 'justmao945/vim-clang'
 "NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'jmcantrell/vim-virtualenv'
 "NeoBundle 'Flake8-vim'
@@ -43,6 +43,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'supermomonga/vimshell-kawaii.vim'
+NeoBundle 'Shougo/unite.vim'
 call neobundle#end()
 
 " Required:
@@ -59,6 +60,7 @@ let g:syntastic_python_checkers = ['pyflakes']
 NeoBundleLazy "davidhalter/jedi-vim", {
     \ "autoload": { "filetypes": [ "python", "python3", "djangohtml"] }}
 
+NeoBundleLazy 'vim-jp/cpp-vim',{'autoload' : {'filetypes' : 'cpp'}}
 let python_major_version = system("python -c 'import sys; print(sys.version_info[0])'")
 if python_major_version == 2 && has('python')
     python None
@@ -100,6 +102,11 @@ set laststatus=2
 set statusline=%F%m%r%h%w[%{&ff}]%=%{g:NyanModoki()}(%l,%c)[%P]
 let g:nyan_modoki_select_cat_face_number = 2
 let g:nayn_modoki_animation_enabled= 1
+
+"C-lang settings
+let g:clang_c_options='-std=c11'
+let g:clang_cpp_options='-std=c++1z -stdlib=libc++ --pedantic-errors'
+
 
 "保存時に自動でチェック
 let g:PyFlakeOnWrite = 1
