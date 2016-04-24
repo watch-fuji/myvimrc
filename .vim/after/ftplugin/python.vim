@@ -1,22 +1,29 @@
 " Configuration for python
 " Author: Yuya Aoki
 
-syntax on
+
+
 set modeline
 set nobackup
 set showmatch
-set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+
 set encoding=utf-8
 set fileencoding=utf-8
 set fileformat=unix
 set tabstop=8
 set columns=80
-set expandtab shiftwidth=4
-set softtabstop=4
 
 " <F5>で編集中のファイルを実行
 " MATLABと同じショートカット
 nmap <F5> :!python %
+" windows"
+"nmap <F5> :!python %<CR>
+
+augroup python-template
+	autocmd!
+	autocmd BufNewFile *.py 0r $HOME/.vim/template/template.py
+augroup END
+
 
 
 if has('vim_starting')
@@ -31,16 +38,11 @@ endif
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'kevinw/pyflakes-vim'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'hdima/python-syntax'
-NeoBundle 'jpythonfold.vim'
-
 
 call neobundle#end()
 NeoBundleCheck
 
-let python_highlight_all = 1
+
 " Jedi for python
 NeoBundleLazy "davidhalter/jedi-vim", {
     \ "autoload": { "filetypes": [ "python", "python3", "djangohtml"] }}
@@ -76,16 +78,6 @@ if ! empty(neobundle#get("jedi-vim"))
 
   autocmd FileType python setlocal completeopt-=preview
 
-
-  if !exists('g:neocomplete#force_omni_input_patterns')
-      let g:neocomplete#force_omni_input_patterns = {}
-  endif
-  let g:neocomplete#force_omni_input_patterns.cpp =
-      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-
-
-
-
   " for w/ neocomplete
     if ! empty(neobundle#get("neocomplete.vim"))
         autocmd FileType python setlocal omnifunc=jedi#completions
@@ -96,7 +88,6 @@ if ! empty(neobundle#get("jedi-vim"))
     endif
 endif
 
-let g:syntastic_python_checkers = ['pyflakes']
 
 "保存時に自動でチェック
 let g:PyFlakeOnWrite = 1
@@ -109,6 +100,12 @@ let g:PyFlakeDefaultComplexity=10
 
 "visualモードでQを押すと自動で修正
 let g:PyFlakeRangeCommand = 'Q'
+
+if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.cpp =
+      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
 
 
 
@@ -142,10 +139,3 @@ endfunction
 
 " Shift + F でautopep自動修正
 nnoremap <S-f> :call Autopep8()<CR>
-
-function! Python_fold_on()
-	let s:python_fold_path = ':source ' . g:my_dot_files . '/bundle/jpythonfold.vim/syntax/jpythonfold.vim'
-	execute s:python_fold_path
-endfunction
-
-
