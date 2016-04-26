@@ -21,7 +21,8 @@ if !exists("autocommand_loaded")
 
   autocmd BufNewFile *.py 0r $HOME/.vim/template/template.py
 
-  runtime! userautoload/tex.vim
+  runtime! ftplugin/python.vim
+  
 endif
 
 nmap	<Leader>f [unite]
