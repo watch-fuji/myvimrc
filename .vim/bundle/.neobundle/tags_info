@@ -1,16 +1,11 @@
-jedi-vim
-jpythonfold.vim
 neobundle.vim
 neocomplcache
 neosnippet
 neosnippet-snippets
 nyan-modoki.vim
-pyflakes-vim
-python-syntax
 syntastic
 unite.vim
-vim-indent-guides
-vim-python-pep8-indent
+vim-latex
 vim-virtualenv
 vimproc
 vimshell

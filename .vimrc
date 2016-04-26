@@ -21,8 +21,7 @@ if !exists("autocommand_loaded")
 
   autocmd BufNewFile *.py 0r $HOME/.vim/template/template.py
 
-  runtime! userautoload/python.vim
-
+  runtime! userautoload/tex.vim
 endif
 
 nmap	<Leader>f [unite]
@@ -57,6 +56,8 @@ NeoBundle 'Shougo/vimproc'
 NeoBundle 'supermomonga/vimshell-kawaii.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'vim-latex/vim-latex'
+
 
 call neobundle#end()
 
@@ -80,4 +81,6 @@ set laststatus=2
 set statusline=%F%m%r%h%w[%{&ff}]%=%{g:NyanModoki()}(%l,%c)[%P]
 let g:nyan_modoki_select_cat_face_number = 2
 let g:nayn_modoki_animation_enabled= 1
+
+
 
