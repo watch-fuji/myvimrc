@@ -17,8 +17,6 @@ set runtimepath+=~/.vim/
 
 autocmd BufNewFile *.py 0r $HOME/.vim/template/template.py
 
-runtime! ftplugin/python.vim
-
 nmap	<Leader>f [unite]
 
 " put esc-key for delete highlight
@@ -80,4 +78,13 @@ let g:nayn_modoki_animation_enabled= 1
 syntax on
 colorscheme badwolf
 highlight Normal ctermbg=none
+
+" Jedi for python
+NeoBundleLazy "davidhalter/jedi-vim", {
+    \ "autoload": { "filetypes": [ "python", "python3", "djangohtml"] }}
+
+
+
+NeoBundleLazy 'hynek/vim-python-pep8-indent'
+
 
