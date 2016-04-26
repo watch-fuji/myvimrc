@@ -2,28 +2,22 @@
 " Author: yuya aoki
 
 
+set number
+set noswapfile
+set cmdheight=2
+set title
+set wildmenu
+set smartcase
+set hlsearch
+set background=dark
+set incsearch
+set whichwrap=b,s,h,l,<,>,[,]
 
-if !exists("autocommand_loaded")
-  syntax on 
-  set number
-  set noswapfile
-  set cmdheight=2
-  set title
-  set wildmenu
-  set smartcase
-  set hlsearch
-  set background=dark
-  set incsearch
-  set whichwrap=b,s,h,l,<,>,[,]
-  colorscheme darkblue
+set runtimepath+=~/.vim/
 
-  set runtimepath+=~/.vim/
+autocmd BufNewFile *.py 0r $HOME/.vim/template/template.py
 
-  autocmd BufNewFile *.py 0r $HOME/.vim/template/template.py
-
-  runtime! ftplugin/python.vim
-  
-endif
+runtime! ftplugin/python.vim
 
 nmap	<Leader>f [unite]
 
@@ -58,7 +52,7 @@ NeoBundle 'supermomonga/vimshell-kawaii.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'vim-latex/vim-latex'
-
+NeoBundle 'sjl/badwolf'
 
 call neobundle#end()
 
@@ -83,5 +77,7 @@ set statusline=%F%m%r%h%w[%{&ff}]%=%{g:NyanModoki()}(%l,%c)[%P]
 let g:nyan_modoki_select_cat_face_number = 2
 let g:nayn_modoki_animation_enabled= 1
 
-
+syntax on
+colorscheme badwolf
+highlight Normal ctermbg=none
 

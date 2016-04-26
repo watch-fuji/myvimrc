@@ -1,7 +1,6 @@
 " Configuration for python
 " Author: Yuya Aoki
 
-echo "read"
 syntax on
 set modeline
 set nobackup
