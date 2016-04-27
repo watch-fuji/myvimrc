@@ -13,7 +13,7 @@ set incsearch
 set whichwrap=b,s,h,l,<,>,[,]
 set list
 set listchars=tab:>-,extends:<,trail:-
-
+set backspace=indent,eol,start
 
 set runtimepath+=~/.vim/
 
