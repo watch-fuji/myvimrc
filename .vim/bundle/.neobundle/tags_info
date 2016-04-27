@@ -6,6 +6,7 @@ neosnippet-snippets
 nyan-modoki.vim
 syntastic
 unite.vim
+vesting
 vim-latex
 vim-virtualenv
 vimproc

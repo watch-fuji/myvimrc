@@ -11,7 +11,6 @@ set hlsearch
 set background=dark
 set incsearch
 set whichwrap=b,s,h,l,<,>,[,]
-set wildchar=<C-Z>
 set list
 set listchars=tab:>-,extends:<,trail:-
 
@@ -54,6 +53,9 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'vim-latex/vim-latex'
 NeoBundle 'sjl/badwolf'
+" Unite vesting で簡単テスト
+NeoBundle 'Shougo/vesting'
+
 
 call neobundle#end()
 

@@ -1,8 +1,4 @@
-language: viml
+language: ruby
 script:
-        - vim --version
-        - cd t/
-        - ../vim-vspec/bin/vspec ../vim-vspec vspec.vim 
-install:
-        - git clone https://github.com/kana/vim-vspec.git 
-
+        - 1.9.3
+script: rake ci

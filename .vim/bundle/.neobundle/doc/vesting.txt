@@ -1,0 +1,150 @@
+*vesting.txt*	The best testing framework for Vim script
+
+Version: 0.1
+Author : Shougo <Shougo.Matsu@gmail.com>
+License: MIT license  {{{
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to
+    permit persons to whom the Software is furnished to do so, subject to
+    the following conditions:
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+    IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+    CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+    TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+    SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+}}}
+
+CONTENTS					*vesting-contents*
+
+Introduction		|vesting-introduction|
+Usage			|vesting-usage|
+Install			|vesting-install|
+Interface		|vesting-interface|
+  Commands		  |vesting-commands|
+  Variables		  |vesting-variables|
+  Functions		  |vesting-functions|
+Unite Sources		|vesting-unite-sources|
+Changelog		|vesting-changelog|
+
+==============================================================================
+INTRODUCTION					*vesting-introduction*
+
+*vesting* is testing framework for Vim script.
+
+==============================================================================
+USAGE						*vesting-usage*
+
+To run test cases under ./vest/*.vim, run the following command.
+
+	:Unite vesting:.
+
+==============================================================================
+INSTALL						*vesting-install*
+
+Install the distributed files into Vim script directory which is usually
+~/.vim/, or $HOME/vimfiles on Windows.
+
+This plugin depends on |unite.vim|. Install it in advance.
+
+==============================================================================
+INTERFACE					*vesting-interface*
+
+------------------------------------------------------------------------------
+COMMANDS 					*vesting-commands*
+
+------------------------------------------------------------------------------
+VARIABLES 					*vesting-variables*
+
+------------------------------------------------------------------------------
+FUNCTIONS					*vesting-functions*
+
+==============================================================================
+EXAMPLES					*vesting-examples*
+>
+	
+<
+==============================================================================
+UNITE SOURCES					*vesting-unite-sources*
+
+Here let me explain about a source for |unite| provided in vesting.
+
+							*vesting-unite-source-vesting*
+vesting
+		Nominates vesting result as a candidate.
+		1. the target directory.
+		2. test name.
+		...
+		Note: The test name is Vim script for vesting filename. But
+		the extension is ommited. If test name is omit, this source
+		nominates all tests. If target directory is omit, use current
+		directory.
+
+==============================================================================
+CHANGELOG					*vesting-changelog*
+
+2012-12-08
+- Deleted bar.
+
+2012-10-28
+- Improved syntax file.
+- Added commands.
+- Improved print messages.
+
+2012-10-08
+- Improved unite source behavior.
+
+2012-10-06
+- More documented.
+
+2012-09-08
+- Set is_multiline.
+
+2012-07-25
+- Fixed indentation.
+
+2012-07-24
+- Improved error catch.
+
+2012-07-22
+- Added syntax and indent files.
+
+2012-07-20
+- Added :ShouldNot command.
+- Improved for execption.
+- Improved commands definition.
+- Improved vesting source behavior.
+- Implemented source completion.
+
+2012-07-19
+- Improved context stack.
+- Fixed error results.
+
+2012-07-18
+- Deleted echo.
+- Fixed unite source.
+- Fixed initialization tests.
+
+2012-07-15
+- Improved unite source.
+- Improved for errors.
+- Improved highlight.
+
+2012-07-08
+- Added commands.
+- Added test.
+- Added unite source.
+- Improved versing source.
+
+2012-06-17
+- Inital version.
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:noet:fen:
