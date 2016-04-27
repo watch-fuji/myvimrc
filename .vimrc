@@ -1,7 +1,6 @@
 " my vim settings
 " Author: yuya aoki
 
-
 set number
 set noswapfile
 set cmdheight=2
