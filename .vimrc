@@ -11,6 +11,10 @@ set hlsearch
 set background=dark
 set incsearch
 set whichwrap=b,s,h,l,<,>,[,]
+set wildchar=<C-Z>
+set list
+set listchars=tab:>-,extends:<,trail:-
+
 
 set runtimepath+=~/.vim/
 
