@@ -1,6 +1,6 @@
 #!/bin/sh
 cp ~/.vimrc ~/myvimrc/
-cp -rf ~/.vim/ ~/myvimrc/.vim/
+cp -rf ~/.vim/ ~/myvimrc/
 cd ~/myvimrc/
 git add -u
 if [ -z $# ]; then

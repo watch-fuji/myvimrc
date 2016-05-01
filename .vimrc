@@ -1,5 +1,6 @@
 " my vim settings
 " Author: yuya aoki
+"	and Fujie lab members
 
 set number
 set noswapfile
@@ -14,6 +15,7 @@ set whichwrap=b,s,h,l,<,>,[,]
 set list
 set listchars=tab:>-,extends:<,trail:-
 set backspace=indent,eol,start
+set tabstop=4
 
 set runtimepath+=~/.vim/
 
@@ -33,6 +35,7 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
+
 " Required:
 call neobundle#begin(expand('~/.vim/bundle/'))
 
@@ -40,8 +43,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 " Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-
-NeoBundle 'jmcantrell/vim-virtualenv'
+"NeoBundle 'tpope/vim-pathogen'
 NeoBundle 'drillbits/nyan-modoki.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Shougo/neosnippet'
@@ -50,8 +52,7 @@ NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'supermomonga/vimshell-kawaii.vim'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'vim-latex/vim-latex'
+"NeoBundle 'SHougo/neocomplete'
 NeoBundle 'sjl/badwolf'
 " Unite vesting で簡単テスト
 NeoBundle 'Shougo/vesting'
@@ -69,8 +70,19 @@ NeoBundleCheck
 filetype plugin indent on
 "au BufRead,BufNewFile * if &ft=='python' |runtime! ~/.vim//userautoload/python.vim |endif
 " runtime! userautoload/python.vim
+"execute pathogen#infect()
 
 
+
+"let g:noecomplete#enable_at_startup = 1
+"let g:neocomplete#enable_ignore_case = 1
+"let g:noecomplete#enable_smart_case = 1
+"if !exists('g:neocomplete#keyword_patterns')
+"	let g:neocomplete#keyword_patterns = {}
+"endif
+"let g:neocomplete#keyword_patterns._= '\h\w*'
+"inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<s-TAB>"
 
 
 
