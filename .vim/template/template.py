@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding : utf-8
 ###########################
-# Author: Yuya Aoki
+#author:   yuya aoki
 #
 ###########################
 
