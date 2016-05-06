@@ -20,6 +20,7 @@ set tabstop=4
 set runtimepath+=~/.vim/
 
 autocmd BufNewFile *.py 0r $HOME/.vim/template/template.py
+autocmd BufNewFile *.cpp 0r $HOME/.vim/template/template.cpp
 
 nmap	<Leader>f [unite]
 
