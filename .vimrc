@@ -98,9 +98,9 @@ colorscheme badwolf
 highlight Normal ctermbg=none
 
 " Jedi for python
-NeoBundleLazy "davidhalter/jedi-vim", {
+/*NeoBundleLazy "davidhalter/jedi-vim", {
     \ "autoload": { "filetypes": [ "python", "python3", "djangohtml"] }}
-
+*/
 
 
 NeoBundleLazy 'hynek/vim-python-pep8-indent'
